@@ -1,0 +1,14 @@
+[package]
+name = "electricsheep-hd"
+version = "0.1.0"
+authors = ["George Hahn <george.hahn@smartthings.com>"]
+
+[dependencies]
+reqwest = "0.8.5"
+lazy_static = "1.0.0"
+clap = "2.31.2"
+error-chain = "0.11.0"
+serde = "1.0.52"
+serde_json = "1.0.17"
+serde_derive = "1.0.52"
+flate2 = "1.0"
