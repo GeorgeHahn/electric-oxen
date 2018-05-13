@@ -170,6 +170,7 @@ fn render_frame(_genome_file: PathBuf, _season: &Season, _w: &Work) -> Result<Pa
     
     let input = format!("--in={}", _genome_file.to_string_lossy());
     let frame = format!("--frame={}", _w.frame - 1);
+    let quality = format!("--quality={}", _season.quality);
     let prefix = format!("--prefix=..\\frames\\{}.{}.", _season.name, _w.sequence);
     if cfg!(target_os = "windows") {
         let _output = Command::new(renderer)
@@ -177,6 +178,7 @@ fn render_frame(_genome_file: PathBuf, _season: &Season, _w: &Work) -> Result<Pa
                     .arg("--format=jpg")
                     .arg("--opencl")
                     .arg("--priority=-2") // TODO
+                    .arg(quality)
                     .arg("--sp")
                     .arg(prefix)
                     .arg("--supersample=2")
